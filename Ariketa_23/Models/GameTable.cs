@@ -14,6 +14,7 @@ namespace Ariketa_23.Models
         public int DimensionY { get; set; } = 10;
         public List<IPiece> PiecesInGame { get; set; }
         public List<IPiece> PiecesToCome { get; set; }
+        public IPiece ActivePiece { get; set; }
 
         public string[,] Table { get; set; }
 
