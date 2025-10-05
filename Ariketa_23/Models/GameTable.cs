@@ -110,8 +110,18 @@ namespace Ariketa_23.Models
             for (int i = 0; i < DimensionX; i++)
                 Console.Write("==");
             Console.WriteLine();
+            DrawControlls();
         }
 
+        public void DrawControlls()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Controles:");
+            Console.WriteLine(" - Flecha izquierda/derecha: Mover la pieza a la izquierda/derecha.");
+            Console.WriteLine(" - Flecha abajo: Mover la pieza hacia abajo.");
+            Console.WriteLine(" - Flecha arriba: Rotar la pieza.");
+            Console.WriteLine(" - Espacio: Bloquear la pieza.");
+        }
 
         public void DrawActivePieceOnTable()
         {
