@@ -2,29 +2,13 @@
 
 namespace Ariketa_23.Models.Pieces
 {
-    internal class StickPiece : IPiece
+    internal class StickPiece : Piece
     {
-		private string[,] _Form = { 
-			{	"[]"	}, 
-			{	"[]"	}, 
-			{	"[]"	}, 
-			{	"[]"	}
+		public override int[,] Form { get; set; } = {
+            { 1 },
+            { 1 },
+            { 1 },
+            { 1 }
         };
-
-		public string[,] Form
-		{
-			get { return _Form; }
-		}
-
-		private int _Rotation;
-
-		public int Rotation
-		{
-			get { return _Rotation; }
-			set { _Rotation = value; }
-		}
-
-        public int PositionX { get; set; }
-        public int PositionY { get; set; }
     }
 }
