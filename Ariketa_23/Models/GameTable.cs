@@ -100,13 +100,16 @@ namespace Ariketa_23.Models
                         }
                     }
 
-                    Console.Write(isPieceCell ? "■  " : $"{Table[x, y],2} ");
+                    string cell = isPieceCell ? "■ " : (string.IsNullOrWhiteSpace(Table[x, y]) ? "· " : "■ ");
+                    Console.Write(cell);
                 }
                 Console.WriteLine("|");
             }
 
-            for (int i = 0; i < DimensionX + 2; i++)
-                Console.Write(" _ ");
+            Console.Write("  ");
+            for (int i = 0; i < DimensionX; i++)
+                Console.Write("==");
+            Console.WriteLine();
         }
 
 
