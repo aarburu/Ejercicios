@@ -9,17 +9,6 @@ namespace Ariketa_23.Models.Pieces
         public int PositionX { get; set; }
         public int PositionY { get; set; }
 
-        public virtual void Draw()
-        {
-            for (int i = 0; i < Form.GetLength(0); i++)
-            {
-                for (int j = 0; j < Form.GetLength(1); j++)
-                {
-                    Console.Write(Form[i, j] == 1 ? "■ " : "  ");
-                }
-                Console.WriteLine();
-            }
-        }
 
         public virtual int[,] RotateClockwise()
         {
