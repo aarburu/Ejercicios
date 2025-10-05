@@ -33,4 +33,7 @@ while (true)
             game.ActivePiece = game.GenerateRandomPiece();
             break;
     }
+    // Sin un delay, si se mantiene una tecla pulsada, el tablero se vuelve completamente negro por refrescos constantes.
+    // Añado un delay minimo para que se vea constantemente la tabla.
+    Thread.Sleep(1);
 }
