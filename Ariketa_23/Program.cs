@@ -7,7 +7,7 @@ while (true)
 {
     game.DisplayWithActivePieceOverlay();
 
-    ConsoleKey key = Console.ReadKey(true).Key;
+    ConsoleKey key = Console.ReadKey().Key;
 
     switch (key)
     {
@@ -24,6 +24,7 @@ while (true)
             game.RotateActivePiece();
             break;
         case ConsoleKey.Spacebar:
+            // TODO:: En lugar de pulsar espacio, comprobar que haya llegado abajo del todo y provocar el bloqueo.
             game.DrawActivePieceOnTable();
             var fullRows = game.CheckFullRow();
 
@@ -33,7 +34,6 @@ while (true)
             game.ActivePiece = game.GenerateRandomPiece();
             break;
     }
-    // Sin un delay, si se mantiene una tecla pulsada, el tablero se vuelve completamente negro por refrescos constantes.
-    // Añado un delay minimo para que se vea constantemente la tabla.
-    Thread.Sleep(1);
+
+    // TODO:: Provocar que las piezas caigan 1 posición cada segundo.
 }
