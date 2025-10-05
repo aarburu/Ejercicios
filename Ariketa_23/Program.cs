@@ -11,6 +11,8 @@ while (true)
 
     switch (key)
     {
+        // TODO:: Rotación al pulsar espacio, al pulsar arriba bajar y colocar la pieza automaticamente.
+
         case ConsoleKey.LeftArrow:
             game.MovePiece(-1, 0);
             break;
@@ -24,7 +26,7 @@ while (true)
             game.RotateActivePiece();
             break;
         case ConsoleKey.Spacebar:
-            // TODO:: En lugar de pulsar espacio, comprobar que haya llegado abajo del todo y provocar el bloqueo.
+            // TODO:: En lugar de pulsar espacio, provocar el bloqueo cuando llegue abajo. Pasar la rotación al espacio.
             game.DrawActivePieceOnTable();
             var fullRows = game.CheckFullRow();
 
