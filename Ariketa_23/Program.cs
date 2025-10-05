@@ -1,4 +1,36 @@
-﻿using Ariketa_23.Models;
+﻿using Ariketa_23.Models.Pieces;
+using Ariketa_23.Models;
+var game = new GameTable(10, 20);
+game.ActivePiece = game.GenerateRandomPiece();
 
-var Game = new GameTable(10, 10);
-Game.RefreshWindow();
+while (true)
+{
+    game.DisplayWithActivePieceOverlay();
+
+    ConsoleKey key = Console.ReadKey(true).Key;
+
+    switch (key)
+    {
+        case ConsoleKey.LeftArrow:
+            game.MovePiece(-1, 0);
+            break;
+        case ConsoleKey.RightArrow:
+            game.MovePiece(1, 0);
+            break;
+        case ConsoleKey.DownArrow:
+            game.MovePiece(0, 1);
+            break;
+        case ConsoleKey.UpArrow:
+            game.RotateActivePiece();
+            break;
+        case ConsoleKey.Spacebar:
+            game.DrawActivePieceOnTable();
+            var fullRows = game.CheckFullRow();
+
+            foreach (var row in fullRows)
+                game.DeleteRow(row);
+
+            game.ActivePiece = game.GenerateRandomPiece();
+            break;
+    }
+}

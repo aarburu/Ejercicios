@@ -15,7 +15,7 @@ namespace Ariketa_23.Models.Pieces
             {
                 for (int j = 0; j < Form.GetLength(1); j++)
                 {
-                    Console.Write(Form[i, j] == 1 ? "■" : " ");
+                    Console.Write(Form[i, j] == 1 ? "■ " : "  ");
                 }
                 Console.WriteLine();
             }
